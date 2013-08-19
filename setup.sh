@@ -77,6 +77,3 @@ npm install -g jshint
 
 # Oh-my-Zsh install
 wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
-
-# change standard shell to zsh
-chsh -s `which zsh`
