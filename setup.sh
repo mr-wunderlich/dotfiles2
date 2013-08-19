@@ -41,10 +41,10 @@ elif [ ${OS} = 'Darwin' ]; then
     TOOLS=clitools.dmg
     curl -o "$TOOLS" http://devimages.apple.com/downloads/xcode/command_line_tools_for_xcode_os_x_mountain_lion_april_2013.dmg
     TMPMOUNT=`/usr/bin/mktemp -d /tmp/clitools.XXXX`
-    hdiutil attach "$TOOLS" -mountpoint "$TMPMOUNT"
-    installer -pkg "$(find $TMPMOUNT -name '*.mpkg')" -target /
-    hdiutil detach "$TMPMOUNT"
-    rm -rf "$TMPMOUNT"
+    sudo hdiutil attach "$TOOLS" -mountpoint "$TMPMOUNT"
+    sudo installer -pkg "$(find $TMPMOUNT -name '*.mpkg')" -target /
+    sudo hdiutil detach "$TMPMOUNT"
+    sudo rm -rf "$TMPMOUNT"
     rm "$TOOLS"
 
     # Install Homebrew
